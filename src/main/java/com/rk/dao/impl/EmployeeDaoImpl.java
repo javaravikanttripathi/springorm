@@ -8,7 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import com.rk.dao.IEmployeeDao;
 import com.rk.model.Address;
+import com.rk.model.Course;
 import com.rk.model.Employee;
+import com.rk.model.Module;
+import com.rk.model.Product;
+import com.rk.model.Students;
 
 @Repository
 public class EmployeeDaoImpl implements IEmployeeDao {
@@ -54,6 +58,27 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	@Override
 	public void saveAddrObjectManyToOne(Address ad) {
 		ht.save(ad);
+	}
+
+	@Override
+	public void saveModObjectOneToMany(Module mod) {
+		ht.save(mod);
+	}
+
+	@Override
+	public void saveProdObjOntToMany(Product p) {
+		ht.save(p);
+	}
+
+	@Override
+	public void saveStudentAsManyToManyOp(Students std) {
+		ht.save(std);
+
+	}
+
+	@Override
+	public void saveCourseAsManyToManyOp(Course srs) {
+		ht.save(srs);
 	}
 
 }

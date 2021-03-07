@@ -1,5 +1,7 @@
 package com.rk.test;
 
+import java.util.ArrayList;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,7 +18,9 @@ public class Test {
 		// emp.deletObject(102);
 		// emp.getOneObject(103);
 		// emp.listOfEmp();
-		emp.ManyToOne();
+		// emp.ManyToOne();
+		// emp.oneToManyOper();
+		emp.manyToManyOp();
 	}
 
 }

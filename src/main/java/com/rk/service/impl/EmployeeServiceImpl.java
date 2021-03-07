@@ -8,7 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rk.dao.IEmployeeDao;
 import com.rk.model.Address;
+import com.rk.model.Course;
 import com.rk.model.Employee;
+import com.rk.model.Module;
+import com.rk.model.Product;
+import com.rk.model.Students;
 import com.rk.service.IEmployeeService;
 
 @Service
@@ -59,6 +63,30 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	@Transactional
 	public void saveManyToOneAddr(Address ad) {
 		dao.saveAddrObjectManyToOne(ad);
+	}
+
+	@Override
+	@Transactional
+	public void saveModuleOneToMany(Module m) {
+		dao.saveModObjectOneToMany(m);
+	}
+
+	@Override
+	@Transactional
+	public void saveProdOneToMany(Product p) {
+		dao.saveProdObjOntToMany(p);
+	}
+
+	@Override
+	@Transactional
+	public void saveStudendsManyToMany(Students s) {
+		dao.saveStudentAsManyToManyOp(s);
+	}
+
+	@Override
+	@Transactional()
+	public void saveCourseAsManyToMany(Course c) {
+		dao.saveCourseAsManyToManyOp(c);
 	}
 
 }
